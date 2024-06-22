@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talent-Sphere</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS styles specific to this page */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        #logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        #logo {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        nav ul li a:hover {
+            background: #555;
+        }
+        section {
+            padding: 20px;
+            margin-top: 80px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        #introduction {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #intro-text {
+            flex: 1;
+        }
+        #intro-image img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .job, .internship {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 5px solid #333;
+        }
+        .job h3, .internship h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .job p, .internship p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+        .apply-button {
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .apply-button:hover {
+            background: #0056b3;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        button[type="submit"] {
+            background: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <img src="logo.png" alt="Talent-Sphere Logo" id="logo">
+            <h1>Talent-Sphere</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#startup-ideas">Startup Ideas</a></li>
+                <li><a href="#interview-preparation">Interview Preparation</a></li>
+                <li><a href="#resume">Resume Builder</a></li>
+                <li><a href="#ppt-creation">PPT Creation</a></li>
+                <li><a href="#job-opportunities">Job Opportunities</a></li>
+                <li><a href="#internship-opportunities">Internship Opportunities</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="introduction">
+        <div id="intro-text">
+            <h2>Welcome to Talent-Sphere</h2>
+            <p>Talent-Sphere is your gateway to unlocking career opportunities and nurturing innovative ideas. Whether you're a seasoned professional or a budding entrepreneur, our platform offers a suite of tools to help you thrive.</p>
+            <p>Explore our resources for startup ideas, sharpen your interview skills, craft compelling resumes, create impactful presentations, and discover exciting job and internship opportunities tailored to your ambitions.</p>
+        </div>
+        <div id="intro-image">
+            <img src="logo.png" alt="Welcome to Talent-Sphere">
+        </div>
+    </section>
+
+    <section id="startup-ideas">
+        <h2>Startup Ideas on Talent-Sphere</h2>
+        <form id="startup-ideas-form">
+            <label for="startup-idea">Write Your Startup Idea:</label>
+            <textarea id="startup-idea" name="startup-idea" rows="4" cols="50"></textarea>
+            <br>
+            <input type="checkbox" id="apply-investment" name="apply-investment">
+            <label for="apply-investment">Apply for Investment</label>
+            <br>
+            <button type="button" onclick="generateStartupIdeasPPT()">Generate Startup Ideas PPT</button>
+        </form>
+        <div id="startup-ideas-download">
+            <!-- Generated Startup Ideas PPT download link will appear here -->
+        </div>
+    </section>
+
+    <section id="interview-preparation">
+        <h2>Interview Preparation on Talent-Sphere</h2>
+        <!-- Content specific to interview preparation presentation -->
+        <p>Prepare effectively for job and startup interviews using Talent-Sphere's resources.</p>
+        <button onclick="generateInterviewPrepPPT()">Generate Interview Prep PPT</button>
+        <div id="interview-prep-download">
+            <!-- Generated Interview Prep PPT download link will appear here -->
+        </div>
+    </section>
+
+    <section id="resume">
+        <h2>Resume Builder & Certificate Upload</h2>
+        <form id="resume-form">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="education">Education:</label><br>
+            <textarea id="education" name="education" rows="2" cols="50" required></textarea><br>
+            <label for="experience">Experience:</label><br>
+            <textarea id="experience" name="experience" rows="2" cols="50" required></textarea><br>
+            <label for="skills">Skills:</label><br>
+            <textarea id="skills" name="skills" rows="2" cols="50" required></textarea><br>
+            <label for="id proof">Upload id :</label>
+            <input type="file" id="id" name="id" accept=".pdf,.doc,.docx" required>
+            <br>
+            <label for="certificates">Upload Certificates:</label>
+            <input type="file" id="certificates" name="certificates" multiple accept=".pdf,.jpg,.png">
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="resume-download">
+            <!-- Generated Resume download link will appear here -->
+        </div>
+    </section>
+
+    <section id="ppt-creation">
+        <h2>PPT Creation</h2>
+        <!-- Placeholder for PPT creation instructions -->
+        <p>Generate and upload PowerPoint presentations based on your ideas and plans.</p>
+        <form id="ppt-upload-form">
+            <label for="ppt-file">Upload PPT:</label>
+            <input type="file" id="ppt-file" name="ppt-file" accept=".ppt,.pptx">
+            <br>
+            <button type="submit">Upload PPT</button>
+        </form>
+    </section>
+
+    <section id="job-opportunities">
+        <h2>Job Opportunities</h2>
+        <div class="job">
+            <h3>Software Engineer</h3>
+            <p><strong>Qualifications:</strong> Bachelor's degree in Computer Science or related field. Proficiency in Java, Python, or JavaScript.</p>
+            <p><strong>Eligibility Criteria:</strong> Minimum 2 years of experience in software development. Strong problem-solving skills.</p>
+            <p><strong>Interview Preparation:</strong> Review algorithms and data structures. Prepare to discuss past projects and technical challenges.</p>
+            <button class="apply-button">Apply Now</button>
+        </div>
+
+        <div class="job">
+            <h3>Marketing Manager</h3>
+            <p><strong>Qualifications:</strong> Bachelor's degree in Marketing, Communications, or related field. Proven experience in digital marketing, SEO, and social media campaigns.</p>
+            <p><strong>Eligibility Criteria:</strong> Minimum 5 years of experience in marketing roles. Leadership skills and ability to manage a team.</p>
+            <p><strong>Interview Preparation:</strong> Showcase successful marketing campaigns. Discuss strategies for increasing brand visibility and customer engagement.</p>
+            <button class="apply-button">Apply Now</button>
+        </div>
+    </section>
+
+    <section id="internship-opportunities">
+        <h2>Internship Opportunities</h2>
+        <div class="internship">
+            <h3>Software Development Intern</h3>
+            <p><strong>Qualifications:</strong> Pursuing a degree in Computer Science or related field. Familiarity with Java or Python.</p>
+            <p><strong>Eligibility Criteria:</strong> Enrolled in an accredited university program. Strong academic performance and eagerness to learn.</p>
+            <p><strong>Interview Preparation:</strong> Showcase personal or academic projects related to software development. Solve coding challenges during the interview.</p>
+            <button class="apply-button">Apply Now</button>
+        </div>
+
+        <div class="internship">
+            <h3>Marketing Intern</h3>
+            <p><strong>Qualifications:</strong> Majoring in Marketing, Business Administration, or related field. Basic understanding of digital marketing concepts.</p>
+            <p><strong>Eligibility Criteria:</strong> Currently enrolled in university. Interest in gaining practical experience in marketing.</p>
+            <p><strong>Interview Preparation:</strong> Highlight coursework or projects related to marketing. Be prepared to discuss social media strategies or market analysis.</p>
+            <button class="apply-button">Apply Now</button>
+        </div>
+    </section>
+
+    <section id="download">
+        <h2>Download Your Documents</h2>
+        <div id="download-links">
+            <!-- Download links will appear here -->
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+    <script>
+        function generateStartupIdeasPPT() {
+            // Placeholder logic for generating and downloading startup ideas PPT
+            alert('Generating and downloading Startup Ideas PPT');
+            // Example: Fetch data, format PPT slides, and generate download link
+            let pptLink = document.createElement('a');
+            pptLink.href = '#'; // Replace with actual PPT file path or generation logic
+            pptLink.textContent = 'Download Startup Ideas PPT';
+            document.getElementById('startup-ideas-download').appendChild(pptLink);
+        }
+
+        function generateInterviewPrepPPT() {
+            // Placeholder logic for generating and downloading interview preparation PPT
+            alert('Generating and downloading Interview Preparation PPT');
+            // Example: Fetch data, format PPT slides, and generate download link
+            let pptLink = document.createElement('a');
+            pptLink.href = '#'; // Replace with actual PPT file path or generation logic
+            pptLink.textContent = 'Download Interview Prep PPT';
+            document.getElementById('interview-prep-download').appendChild(pptLink);
+        }
+
+        // Form submission handling for Resume Builder
+        document.getElementById('resume-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let formData = new FormData(this);
+            // Placeholder logic for handling resume submission
+            console.log('Submitted Resume Data:', formData);
+            alert('Resume submitted successfully!');
+            // Example: Display download link for generated resume
+            let downloadLink = document.createElement('a');
+            downloadLink.href = '#'; // Replace with actual download link
+            downloadLink.textContent = 'Download Resume';
+            document.getElementById('resume-download').appendChild(downloadLink);
+        });
+
+        // Form submission handling for PPT upload
+        document.getElementById('ppt-upload-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            let formData = new FormData(this);
+            // Placeholder logic for handling PPT upload
+            console.log('Uploaded PPT:', formData.get('ppt-file'));
+            alert('PPT uploaded successfully!');
+        });
+
+        // Apply button functionality for jobs and internships
+        const applyButtons = document.querySelectorAll('.apply-button');
+        applyButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Applied for this position!');
+                // Replace with actual application logic (e.g., form submission, API call)
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
